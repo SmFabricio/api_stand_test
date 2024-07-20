@@ -46,9 +46,9 @@ def negative_assert_symbol(first_name):
     # Comprueba que el atributo code en el cuerpo de respuesta es 400
     assert response.json()["code"] == 400
     # Comprueba el atributo message en el cuerpo de respuesta
-    assert response.json()["message"] == "El nombre que ingresaste es incorrecto. " \
-                                         "Los nombres solo pueden contener caracteres latinos,  "\
-                                         "los nombres deben tener al menos 2 caracteres y no más de 15 caracteres"
+    assert response.json()["message"] == "Has introducido un nombre de usuario no válido. " \
+                                         "El nombre solo puede contener letras del alfabeto latino, "\
+                                         "la longitud debe ser de 2 a 15 caracteres."
 
 # Función de prueba negativa cuando el error es "No se enviaron todos los parámetros requeridos"
 def negative_assert_no_firstname(user_body):
@@ -61,7 +61,7 @@ def negative_assert_no_firstname(user_body):
     # Comprueba que el atributo code en el cuerpo de respuesta es 400
     assert response.json()["code"] == 400
     # Comprueba el atributo message en el cuerpo de respuesta
-    assert response.json()["message"] == "No se enviaron todos los parámetros requeridos"
+    assert response.json()["message"] == "No se han aprobado todos los parámetros requeridos"
 
 # Prueba 1. Usuario o usuaria creada con éxito. El parámetro firstName contiene 2 caracteres
 def test_create_user_2_letter_in_first_name_get_success_response():
